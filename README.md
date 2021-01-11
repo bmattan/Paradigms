@@ -2,7 +2,7 @@
 
 In this repository, you will find the novel visual perspective-taking paradigms I programmed as part of my PhD and early postdoctoral work. The original paradigm was programmed in E-Prime, but I have also created a version of the 3PP-3PP task in Inquisit.
 
-If you identify any errors as you work with these scripts, please let me know by submitting an issue in the Issues tab. Thank you.
+If you identify any errors as you work with these scripts, please let me know by submitting an issue in the Issues tab or by contacting me directly by emailing brad.mattan[at]gmail.com. Thank you.
 
 For more information on the visual perspective-taking paradigms, please see
 
