@@ -1,0 +1,5 @@
+date	time	group	subject	build	job.LS_response	job.LS_latency	education.LS_response	education.LS_latency	individuate.LS_income_response	individuate.LS_income_latency	job.HS_response	job.HS_latency	education.HS_response	education.HS_latency	individuate.HS_income_response	individuate.HS_income_latency	
+030117	14:18:10	1	1	4.0.8.0	janitor	14127	high school diploma	14127	less than $30,000	14127	director	30540	master's	30540	$60,000-$70,000	30540	
+030117	14:33:37	1	3	4.0.8.0	janitor	9450	high school diploma	9450	less than $30,000	9450	director	10453	master's	10453	$70,000-$80,000	10453	
+030117	14:51:27	1	1	4.0.8.0	janitor	12467	high school diploma	12467	less than $30,000	12467	director	10299	master's	10299	$70,000-$80,000	10299	
+030117	15:11:06	1	3	4.0.8.0	janitor	9010	high school diploma	9010	less than $30,000	9010	director	10043	master's	10043	$70,000-$80,000	10043	

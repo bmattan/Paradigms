@@ -1,0 +1,177 @@
+build	date	time	subject	group	blocknum	blockcode	trialnum	trialcode	response	correct	latency	stimulusnumber1	stimulusitem1	stimulusnumber2	stimulusitem2	stimulusnumber3	stimulusitem3	stimulusnumber4	stimulusitem4	stimulusnumber5	stimulusitem5	stimulusnumber6	stimulusitem6	stimulusnumber7	stimulusitem7	stimulusnumber8	stimulusitem8	stimulusnumber9	stimulusitem9	stimulusnumber10	stimulusitem10	stimulusnumber11	stimulusitem11	stimulusnumber12	stimulusitem12
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	1	instruct1.M	57	1	3348	1	PERSPECTIVES TASK     Thank you for your participation thusfar.    You will now complete a series of tasks that require you to view a three dimensional (3D) space from different perspectives.	1	Please press space bar to continue.	1	blankav.png	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	2	instruct1.M	57	1	2958	2	On each trial, you will view a 3D environment with the avatars representing James (mall janitor) and Eric (mall director).    Opposite the two avatars on the far wall of the 3D space, you will see a total of four dots.  You will also see some visual barriers perpendicular to the back wall.	2	Please press space bar to see an example of this 3D space.	2	blankav.png	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	3	instruct1.M	3	1	5514	3	3D SPACE EXAMPLE, PART 1:    Note that the avatar on the left can only see the two dots in the middle; the dots on the far left and far right are obscured by the barriers.  Remember that avatars can only ever see dots in the direction that they are facing.	3	How many dots can the avatar on the right see?  Press 1 or 2.	3	example-m.jpg	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	4	instruct1.M	57	1	4767	4	Let's get some more practice taking perspectives in this 3D environment.    In the next few slides, we will present you with just one avatar within the 3D environment. All you need to do is indicate how many dots that avatar can see by pressing the 1 or 2 key on your keyboard.	4	Please press space bar to continue.	4	blankav.png	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	5	instruct1.M	57	1	1840	5	Remember: Even though you personally can see all the dots, the avatars can see dots on only one side of any given barrier--including the barrier on their own side.	5	Please press space bar to continue.	5	blankav.png	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	6	introtask.LS.M	3	1	795	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	2457.jpg	4	blankav.png	4	lfrblue-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	7	introtask.LS.M	2	1	429	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	1357.jpg	1	rflblue-m.png	1	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	8	introtask.LS.M	2	1	451	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	3578.jpg	8	blankav.png	8	lfrblue-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	9	introtask.LS.M	2	1	358	1	+   +	1	+   +	1	+ +	1	+ +	1	+	10	3589.jpg	10	blankav.png	10	lfrblue-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	10	introtask.HS.M	2	1	334	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2357.jpg	2	blankav.png	2	lfrgreen-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	11	introtask.LS.M	2	1	366	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2357.jpg	2	blankav.png	2	lfrblue-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	12	introtask.HS.M	2	1	466	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2358.jpg	3	rflgreen-m.png	3	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	13	introtask.HS.M	3	1	649	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	3568.jpg	7	rflgreen-m.png	7	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	14	introtask.LS.M	3	1	362	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	3568.jpg	7	rflblue-m.png	7	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	15	introtask.HS.M	2	1	381	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	1357.jpg	1	rflgreen-m.png	1	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	16	introtask.HS.M	3	1	391	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3457.jpg	5	rflgreen-m.png	5	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	17	introtask.LS.M	3	1	320	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	blankav.png	6	lfrblue-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	18	introtask.HS.M	2	1	326	1	+   +	1	+   +	1	+ +	1	+ +	1	+	10	3589.jpg	10	blankav.png	10	lfrgreen-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	19	introtask.HS.M	3	1	373	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	2457.jpg	4	blankav.png	4	lfrgreen-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	20	introtask.LS.M	2	1	349	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2358.jpg	3	rflblue-m.png	3	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	21	introtask.LS.M	3	1	742	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3457.jpg	5	rflblue-m.png	5	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	22	introtask.HS.M	3	1	373	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	blankav.png	6	lfrgreen-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	23	introtask.LS.M	2	1	340	1	+   +	1	+   +	1	+ +	1	+ +	1	+	9	3579.jpg	9	rflblue-m.png	9	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	24	introtask.HS.M	2	1	357	1	+   +	1	+   +	1	+ +	1	+ +	1	+	9	3579.jpg	9	rflgreen-m.png	9	blankav.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	25	introtask.HS.M	2	1	357	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	3578.jpg	8	blankav.png	8	lfrgreen-m.png	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	26	instruct2	57	1	5788	1	Now that you're familiar with the 3D environment, let's continue to a slightly more difficult task.    Before viewing the 3D environment on each trial, you will see a brief prompt. The prompt will indicate which target's perspective you will be taking in that trial.    Your task is to determine how many dots the prompted avatar can see.	1	Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	27	instruct2	57	1	2278	2	TRIAL EXAMPLE:    The prompt says you should take James's (mall janitor, blue avatar) perspective. In the 3D space that follows, James's avatar sees exactly two dots. In this case, you would respond by pressing the 2 key.    If the prompted perspective sees just one dot, then you would press the 1 key instead.	2	Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	28	instruct2	57	1	1539	3	KEYBOARD USE:    If the prompted avatar sees one dot, press the 1 key.  If the prompted avatar sees two dots, press the 2 key.	3	Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	29	instruct2	2	0	4767	4	FINGER PLACEMENT:     Because the 1 and the 2 keys are so close, we ask that you use your right hand only. Please place your right pointer finger over the 1 key and your right middle finger over the 2 key.    You may find it easier to use the 1 and 2 keys on your keyboard's number pad, if available.	4	Please press the 1 key to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	2	3PP3PPTaskInstructions.M	30	instruct2	3	1	2142	5	For the following practice trials, we encourage you complete the trials as quickly and accurately as possible.	5	Please press the 2 key when you are ready to begin.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	1	CLS2.M	3	1	450	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3567.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	2	CLS1.M	2	1	642	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3579.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	3	CLS2.M	3	1	594	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3457.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	4	CHS2.M	3	1	474	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3568.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	5	IHS2.parallel.leftin.M	3	1	1459	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2457.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	6	CHS1.M	2	1	492	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2357.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	7	ILS2.parallel.leftout.M	3	1	470	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	8	IHS2.parallel.leftout.M	3	1	870	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2358.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	9	CHS1.M	2	1	837	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	10	ILS2.parallel.leftin.M	3	1	578	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	11	CLS1.M	2	1	919	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	12	IHS2.outward.M	3	1	1032	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	13	pracblockfb.M	57	0	1778	1	You got 12 out of 13 trials correct.   Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	3	3PP3PPTaskPractice.M	14	pracblockpass	57	0	1696	1	Well done.  You're now ready to start the experimental block.   Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	1	instruct3	57	1	1342	1	REMINDER:    James (mall janitor) is represented by blue.    Eric (mall director) is represented by green.	1	Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	2	instruct3	57	1	1032	2	REMINDER:    The 1 key means that the target avatar sees one (1) dot.    The 2 key means that the target avatar sees two (2) dots.	2	Please press space bar to continue.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	3	instruct3	3	1	1584	3	Time to get ready:    Please ensure your fingers are in the correct positions over the 1 and 2 keys on your keyboard.    The first experimental block begins after this screen.  Please remember to respond as QUICKLY and ACCURATELY as possible on all trials.	3	Please press the 2 key when you are ready to begin.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	4	CHS2.M	3	1	452	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	5	ILS2.parallel.leftin.M	3	1	740	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	6	IHS2.outward.M	3	1	829	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3579.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	7	CLS2.M	3	1	486	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3568.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	8	CLS2.M	3	1	424	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3457.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	9	CHS1.M	2	1	455	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	10	IHS1.parallel.leftin.M	2	1	738	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2457.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	11	IHS2.outward.M	3	1	800	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3589.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	12	CLS2.M	3	1	527	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2457.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	13	IHS1.outward.M	2	1	763	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3579.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	14	IHS1.outward.M	3	0	1222	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3589.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	15	CHS2.M	3	1	506	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2457.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	16	CHS1.M	2	1	464	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	17	CLS2.M	3	1	541	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	18	CLS2.M	3	1	459	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3568.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	19	CLS2.M	3	1	486	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3567.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	20	ILS1.outward.M	2	1	933	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2357.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	21	IHS1.outward.M	2	1	639	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2357.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	22	CHS2.M	3	1	533	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3457.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	23	CHS2.M	3	1	397	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3567.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	24	CLS1.M	2	1	531	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	25	CLS2.M	3	1	454	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	26	CLS2.M	3	1	406	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2457.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	27	IHS2.parallel.leftin.M	3	1	1027	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2457.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	28	ILS1.parallel.leftout.M	2	1	543	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3567.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	29	ILS2.outward.M	3	1	1108	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3579.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	30	ILS2.parallel.leftin.M	3	1	1275	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3568.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	31	IHS1.outward.M	2	1	656	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	1357.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	32	ILS1.parallel.leftin.M	3	0	1227	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2457.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	33	CLS1.M	2	1	531	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3579.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	34	ILS2.parallel.leftout.M	3	1	541	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2358.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	35	CHS1.M	2	1	538	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	36	CLS1.M	2	1	579	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	37	IHS2.outward.M	3	1	1214	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	38	CHS2.M	3	1	560	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2457.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	39	CLS1.M	2	1	647	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	40	ILS1.parallel.leftout.M	2	1	1164	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2358.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	41	IHS2.parallel.leftin.M	3	1	1729	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	42	ILS2.parallel.leftout.M	3	1	728	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	43	ILS2.outward.M	3	1	496	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3589.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	44	ILS1.outward.M	2	1	1312	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	45	IHS2.outward.M	3	1	1304	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2357.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	46	ILS2.outward.M	3	1	715	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	1357.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	47	CHS2.M	3	1	513	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3568.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	48	CLS2.M	3	1	571	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	49	ILS2.parallel.leftout.M	3	1	473	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	50	CLS2.M	3	1	482	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3457.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	51	CLS2.M	3	1	430	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2457.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	52	CLS1.M	2	1	634	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2357.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	53	IHS1.parallel.leftout.M	2	1	860	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2358.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	54	IHS1.outward.M	2	1	904	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	1357.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	55	ILS2.parallel.leftout.M	3	1	583	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2358.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	56	IHS1.parallel.leftin.M	3	0	1059	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	57	ILS2.outward.M	3	1	678	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2357.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	58	CHS2.M	3	1	585	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	59	CLS1.M	2	1	647	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	1357.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	60	CHS1.M	2	1	541	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2357.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	61	CHS2.M	3	1	504	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3568.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	62	CLS1.M	2	1	543	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	63	CHS1.M	2	1	524	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	1357.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	64	ILS1.outward.M	3	0	1444	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3589.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	65	ILS1.outward.M	3	0	805	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3579.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	66	CHS1.M	2	1	466	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3579.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	67	CHS1.M	2	1	576	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	68	ILS1.parallel.leftin.M	2	1	1077	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	69	CHS1.M	2	1	460	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3579.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	70	ILS2.outward.M	3	1	534	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3579.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	71	ILS1.outward.M	2	1	490	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2357.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	72	IHS1.parallel.leftout.M	2	1	687	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3567.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	73	IHS2.parallel.leftin.M	3	1	654	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	74	ILS2.outward.M	3	1	718	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2357.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	75	ILS1.parallel.leftout.M	2	1	840	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3567.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	76	CLS1.M	2	1	635	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3579.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	77	CHS1.M	2	1	503	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3579.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	78	CHS2.M	3	1	523	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3568.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	79	IHS2.parallel.leftout.M	3	1	627	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2358.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	80	CLS1.M	2	1	581	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	81	CHS1.M	2	1	871	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3579.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	82	CHS1.M	2	1	514	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2357.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	83	IHS2.parallel.leftout.M	3	1	1341	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3567.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	84	CLS1.M	2	1	468	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3579.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	85	IHS1.parallel.leftout.M	2	1	944	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3567.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	86	CHS2.M	3	1	801	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3567.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	87	ILS1.parallel.leftout.M	3	0	1496	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2358.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	88	CLS2.M	3	1	532	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	89	CHS1.M	2	1	573	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2357.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	90	IHS2.parallel.leftin.M	2	0	825	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2457.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	91	ILS1.parallel.leftin.M	2	1	679	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	92	CLS2.M	3	1	530	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3568.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	93	CHS2.M	3	1	1184	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3567.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	94	CHS1.M	2	1	497	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	95	CLS2.M	3	1	522	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3568.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	96	CLS1.M	2	1	432	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	1357.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	97	IHS1.outward.M	3	0	1216	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3579.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	98	CLS1.M	2	1	785	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2357.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	99	CLS1.M	2	1	648	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	100	CHS1.M	2	1	764	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	101	CLS2.M	3	1	538	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	5	3567.jpg	5	rflblue-m.png	5	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	102	IHS1.parallel.leftin.M	2	1	1087	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2457.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	103	CHS2.M	3	1	560	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2457.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	104	IHS1.outward.M	2	1	934	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2357.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	105	ILS2.outward.M	3	1	833	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3589.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	106	ILS2.outward.M	3	1	616	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	1357.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	107	ILS1.outward.M	3	0	1189	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	108	IHS2.outward.M	3	1	1775	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	2357.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	109	ILS2.parallel.leftin.M	3	1	1076	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	110	CLS1.M	2	1	753	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	111	CLS1.M	2	1	1018	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	6	3579.jpg	6	rflgreen-m.png	6	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	112	IHS1.parallel.leftout.M	2	1	1597	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	2358.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	113	IHS2.parallel.leftout.M	3	1	1414	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3567.jpg	1	lflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	114	ILS2.parallel.leftin.M	3	1	694	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3568.jpg	1	rflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	115	CLS1.M	2	1	638	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	116	ILS1.parallel.leftin.M	2	1	1576	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2457.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	117	CHS1.M	2	1	548	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3578.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	118	CHS2.M	3	1	541	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3457.jpg	1	rflblue-m.png	1	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	119	IHS1.parallel.leftin.M	2	1	1050	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3578.jpg	2	rflgreen-m.png	2	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	120	CHS2.M	3	1	536	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	7	2457.jpg	7	rflblue-m.png	7	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	121	CHS1.M	2	1	601	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	1357.jpg	3	rflblue-m.png	3	lfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	122	IHS2.outward.M	3	1	1766	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3589.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	123	IHS2.outward.M	3	1	811	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	1357.jpg	4	lflgreen-m.png	4	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	124	IHS1.outward.M	2	1	1313	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	3	3589.jpg	3	lflgreen-m.png	3	rfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	125	IHS2.outward.M	3	1	520	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3579.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	126	IHS2.parallel.leftout.M	3	1	476	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	2358.jpg	2	lflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	127	ILS1.outward.M	2	1	508	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3579.jpg	2	lflblue-m.png	2	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	128	CLS2.M	3	1	606	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	8	2457.jpg	8	rflgreen-m.png	8	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	129	CHS2.M	3	1	1423	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	2	3457.jpg	2	rflgreen-m.png	2	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	130	CHS2.M	3	1	538	1	blank	2	Eric	2	Eric	1	+   +	1	+   +	1	+ +	1	+ +	1	+	4	3568.jpg	4	rflgreen-m.png	4	lfrblue-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	4	3PP3PPTask.M	131	ILS1.outward.M	2	1	844	1	blank	1	James	1	James	1	+   +	1	+   +	1	+ +	1	+ +	1	+	1	3589.jpg	1	lflblue-m.png	1	rfrgreen-m.png	1	blank
+4.0.8.0	030117	14:22:29	1	1	6	finish	1	finish	57	0	5244	1	Thank you for completing the perspective-taking task.    Take a moment to rest if you wish.  After this, we will have you complete a short attentional task.      When you are ready to continue, please press space bar.	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

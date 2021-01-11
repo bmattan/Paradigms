@@ -1,0 +1,1976 @@
+﻿***************************************************************************************************************
+THIRD-PERSON PERSPECTIVE-TAKING TASK (3PP-3PP TASK): COUNTERBALANCED VERSION A
+
+
+
+Programmed by Bradley D. Mattan for the Impression Formation Social Neuroscience and Psychology Lab 
+
+University of Chicago
+June 2017
+
+
+
+This program is based on the design used in the following study:
+
+Mattan, B. D., Rotshtein, P., & Quinn, K. A. (2016).  Empathy and visual perspective-taking performance. 
+Cognitive Neuroscience, 7, 170–181.  doi:10.1080/17588928.2015.1085372
+
+The original concept for the 3PP-3PP task can be found here:
+
+Mattan, B. D., Quinn, K. A., Apperly, I. A., Sui, J., & Rotshtein, P. (2015). Is it always me first? Effects of 
+self-tagging on third-person perspective-taking. Journal of Experimental Psychology: Learning, Memory, and 
+Cognition, 41, 1100–1117. doi:10.1037/xlm0000078
+
+
+
+NOTES:
+
+To adapt this script, replace the original stimuli below with your own stimuli.  May the odds be ever in your 
+favor.
+
+In this version, blue is assigned to low status and green is assigned to high status.  Color-condition mapping
+should be counterbalanced.  Therefore, this file should be run as part of a batch that includes a script with
+the opposite color-condition mapping (i.e., Counterbalanced Version B).
+
+For this version of the experiment, the gender of the avatar is always male, but a slight chance can restore
+the ability to tailor the avatar to the participant's gender.
+
+Note (June, 2017): After piloting, I replaced the unlimited response window by adding a timeout of 4000 ms.
+***************************************************************************************************************
+
+
+
+**********************************************************************************************
+**********************************************************************************************
+VALUES: automatically updated
+**********************************************************************************************
+**********************************************************************************************
+/completed:	0 = script was not completed; 1 = script was completed (all conditions run)
+/trialtarg: names for high- and low-status avatars
+
+<values>
+/completed = 0
+/tracker.ACC = 0
+/trialtarg = 0
+/trialindex = 0
+/lav.outward.x = 37.34%
+/lav.inward.x = 40.08%
+/rav.outward.x = 64.06%
+/rav.inward.x = 61.33%
+/prompt.y = 56.61%
+/avatar.y = 66.93%
+</values>
+
+**********************************************************************************************
+**********************************************************************************************
+ITEMS AND INSTRUCTIONS: IMPORTANT! This script is designed to present multiple stimuli 
+on the same trial (e.g., two avatars and an environment in the background).  This is achieved 
+by indexing stimuli via list elements (e.g., list.tracker) found in the stimulus indices
+section.  Therefore any modifications to the stimuli should take this into account.
+**********************************************************************************************
+**********************************************************************************************
+
+*****************
+GENDER SELECTION
+*****************
+
+<dropdown genderopt>
+/ caption = "As in the initial training, please select the gender with which you most strongly identify.  Please select from the dropdown menu below.~n~n~n"
+/ txcolor = (255,255,255)
+/ options = ("female", "male")
+</dropdown>
+
+<surveypage genderopt>
+/ questions = [1=genderopt]
+</surveypage>
+
+<dropdown genderconf>
+/ caption = "You indicated that you most strongly identify with <%dropdown.genderopt.response%>.~n~n~nIs this correct?~n~n~n"
+/ txcolor = (255,255,255)
+/ defaultresponse = "no"
+/ options = ("yes", "no")
+</dropdown>
+
+<surveypage genderconf>
+/ questions = [1=genderconf]
+</surveypage>
+
+<survey genderopt>
+/ pages=[1=genderopt; 2=genderconf]
+/ screencolor=black
+/ txcolor=white
+/ showbackbutton=true
+/ showpagenumbers=false
+/ navigationbuttonfontstyle = ("Arial", 3.52%, false, false, false, false, 5, 0)
+/ branch = [if (dropdown.genderconf.response == "yes") noblock]
+/ branch = [if (dropdown.genderconf.response == "no") survey.genderopt]
+</survey>
+
+**********************************
+INDIVIDUATION SURVEY: BEFORE TASK
+**********************************
+
+<radiobuttons job.LS.before>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+/ correctresponse = ("janitor")
+</radiobuttons>
+
+<radiobuttons job.HS.before>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+/ correctresponse = ("director")
+</radiobuttons>
+
+<radiobuttons education.LS.before>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+/ correctresponse = ("high school diploma")
+</radiobuttons>
+
+<radiobuttons education.HS.before>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+/ correctresponse = ("master's")
+</radiobuttons>
+
+<radiobuttons income.before>
+/ caption = "How much do you think this person earns every year?"
+/ options = ("less than $30,000", "$30,000-$40,000", "$40,000-$50,000", "$50,000-$60,000", "$60,000-$70,000", "$70,000-$80,000", "$80,000-$90,000", "$90,000-$100,000", "more than $100,000")
+/ orientation = vertical
+</radiobuttons>
+
+<surveypage individuate.LS.before>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(1)%> (blue avatar).  When you are ready, please carefully answer the questions below."
+/ questions = [1=job.LS.before; 2=education.LS.before; 3=income.before]
+</surveypage>
+
+<surveypage individuate.HS.before>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(2)%> (green avatar).  When you are ready, please carefully answer the questions below."
+/ questions = [1=job.HS.before; 2=education.HS.before; 3=income.before]
+</surveypage>
+
+<survey individuate.before>
+/ pages = [1-2=noreplace(individuate.LS.before, individuate.HS.before)]
+/ screencolor=white
+/ txcolor=black
+/ showbackbutton=false
+/ showpagenumbers=false
+/ showquestionnumbers=false
+/ navigationbuttonfontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+</survey>
+
+*********************************
+INDIVIDUATION SURVEY: AFTER TASK
+*********************************
+
+<radiobuttons job.LS.after>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons job.HS.after>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons education.LS.after>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons education.HS.after>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+</radiobuttons>
+
+<radiobuttons income.after>
+/ caption = "How much do you think this person earns every year?"
+/ options = ("less than $30,000", "$30,000-$40,000", "$40,000-$50,000", "$50,000-$60,000", "$60,000-$70,000", "$70,000-$80,000", "$80,000-$90,000", "$90,000-$100,000", "more than $100,000")
+/ orientation = vertical
+</radiobuttons>
+
+<surveypage individuate.LS.after>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(1)%> (blue avatar).  When you are ready, please carefully answer the questions below."
+/ questions = [1=job.LS.after; 2=education.LS.after; 3=income.after]
+</surveypage>
+
+<surveypage individuate.HS.after>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(2)%> (green avatar).  When you are ready, please carefully answer the questions below."
+/ questions = [1=job.HS.after; 2=education.HS.after; 3=income.after]
+</surveypage>
+
+<survey individuate.after>
+/ pages = [1-2=noreplace(individuate.LS.after, individuate.HS.after)]
+/ screencolor=white
+/ txcolor=black
+/ showbackbutton=false
+/ showpagenumbers=false
+/ showquestionnumbers=false
+/ navigationbuttonfontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+</survey>
+
+*************
+INSTRUCTIONS
+*************
+
+<item instruct1>
+
+/ 1 = "~n~n~n~n~nPERSPECTIVES TASK 
+
+Thank you for your participation thusfar.
+
+You will now complete a series of tasks that require you to view a three dimensional (3D) space from different perspectives."
+
+/ 2 = "~n~n~n~n~nOn each trial, you will view a 3D environment with the avatars representing <%item.target.1%> (Accountant) and <%item.target.2%> (Charity Director).
+
+Opposite the two avatars on the far wall of the 3D space, you will see a total of four dots.  You will also see some visual barriers perpendicular to the back wall."
+
+/ 3 = "3D SPACE EXAMPLE, PART 1:
+
+Note that the avatar on the left can only see the two dots in the middle; the dots on the far left and far right are obscured by the barriers.  Remember that avatars can only ever see dots in the direction that they are facing."
+
+/ 4 = "~n~n~n~n~nLet's get some more practice taking perspectives in this 3D environment.
+
+In the next few slides, we will present you with just one avatar within the 3D environment. All you need to do is indicate how many dots that avatar can see by pressing the 1 or 2 key on your keyboard."
+
+/ 5 = "~n~n~n~n~nRemember: Even though you personally can see all the dots, the avatars can see dots on only one side of any given barrier--including the barrier on their own side."
+
+</item>
+
+<item instruct2>
+
+/ 1 = "~n~n~n~n~nNow that you're familiar with the 3D environment, let's continue to a slightly more difficult task.
+
+Before viewing the 3D environment on each trial, you will see a brief prompt. The prompt will indicate which target's perspective you will be taking in that trial.
+
+Your task is to determine how many dots the prompted avatar can see."
+
+/ 2 = "~n~n~n~n~nTRIAL EXAMPLE:
+
+The prompt says you should take <%item.names.1%>'s (Accountant, blue avatar) perspective. In the 3D space that follows, <%item.names.1%>'s avatar sees exactly two dots. In this case, you would respond by pressing the 2 key.
+
+If the prompted perspective sees just one dot, then you would press the 1 key instead."
+
+/ 3 = "~n~n~n~n~nKEYBOARD USE:
+
+If the prompted avatar sees one dot, press the 1 key.
+If the prompted avatar sees two dots, press the 2 key."
+
+/ 4 = "~n~n~n~n~nFINGER PLACEMENT: 
+
+Because the 1 and the 2 keys are so close, we ask that you use your right hand only. Please place your right pointer finger over the 1 key and your right middle finger over the 2 key.
+
+You may find it easier to use the 1 and 2 keys on your keyboard's number pad, if available."
+
+/ 5 = "~n~n~n~n~nFor the following practice trials, we encourage you complete the trials as quickly and accurately as possible."
+
+</item>
+
+<item instruct3>
+
+/ 1 = "~n~n~n~n~nREMINDER:
+
+<%item.names.1%> (Accountant) is represented by blue.
+
+<%item.names.2%> (Charity Director) is represented by green."
+
+/ 2 = "~n~n~n~n~nREMINDER:
+
+The 1 key means that the target avatar sees one (1) dot.
+
+The 2 key means that the target avatar sees two (2) dots."
+
+/ 3 = "~n~n~n~n~nTime to get ready:
+
+Please ensure your fingers are in the correct positions over the 1 and 2 keys on your keyboard.
+
+The first experimental block begins after this screen.  Please remember to respond as QUICKLY and ACCURATELY as possible on all trials."
+
+</item>
+
+<item toproceed1>
+
+/ 1 = "Please press space bar to continue."
+
+/ 2 = "Please press space bar to see an example of this 3D space."
+
+/ 3 = "How many dots can the avatar on the right see?  Press 1 or 2."
+
+/ 4 = "Please press space bar to continue."
+
+/ 5 = "Please press space bar to continue."
+
+</item>
+
+<item toproceed2>
+
+/ 1 = "Please press space bar to continue."
+
+/ 2 = "Please press space bar to continue."
+
+/ 3 = "Please press space bar to continue."
+
+/ 4 = "Please press the 1 key to continue."
+
+/ 5 = "Please press the 2 key when you are ready to begin."
+
+</item>
+
+<item toproceed3>
+
+/ 1 = "Please press space bar to continue."
+
+/ 2 = "Please press space bar to continue."
+
+/ 3 = "Please press the 2 key when you are ready to begin."
+
+</item>
+
+<item intropic.M>
+/ 1 = "blankav.png"
+/ 2 = "blankav.png"
+/ 3 = "example-m.jpg"
+/ 4 = "blankav.png"
+/ 5 = "blankav.png"
+</item>
+
+<item intropic.F>
+/ 1 = "blankav.png"
+/ 2 = "blankav.png"
+/ 3 = "example-f.jpg"
+/ 4 = "blankav.png"
+/ 5 = "blankav.png"
+</item>
+
+*****************************
+INITIAL FAMILIARIZATION TASK
+*****************************
+
+<item introlavLS.M>
+/ 1 = "rflblue-m.png"
+/ 2 = "blankav.png"
+/ 3 = "rflblue-m.png"
+/ 4 = "blankav.png"
+/ 5 = "rflblue-m.png"
+/ 6 = "blankav.png"
+/ 7 = "rflblue-m.png"
+/ 8 = "blankav.png"
+/ 9 = "rflblue-m.png"
+/ 10 = "blankav.png"
+</item>
+
+<item introravLS.M>
+/ 1 = "blankav.png"
+/ 2 = "lfrblue-m.png"
+/ 3 = "blankav.png"
+/ 4 = "lfrblue-m.png"
+/ 5 = "blankav.png"
+/ 6 = "lfrblue-m.png"
+/ 7 = "blankav.png"
+/ 8 = "lfrblue-m.png"
+/ 9 = "blankav.png"
+/ 10 = "lfrblue-m.png"
+</item>
+
+<item introlavHS.M>
+/ 1 = "rflgreen-m.png"
+/ 2 = "blankav.png"
+/ 3 = "rflgreen-m.png"
+/ 4 = "blankav.png"
+/ 5 = "rflgreen-m.png"
+/ 6 = "blankav.png"
+/ 7 = "rflgreen-m.png"
+/ 8 = "blankav.png"
+/ 9 = "rflgreen-m.png"
+/ 10 = "blankav.png"
+</item>
+
+<item introravHS.M>
+/ 1 = "blankav.png"
+/ 2 = "lfrgreen-m.png"
+/ 3 = "blankav.png"
+/ 4 = "lfrgreen-m.png"
+/ 5 = "blankav.png"
+/ 6 = "lfrgreen-m.png"
+/ 7 = "blankav.png"
+/ 8 = "lfrgreen-m.png"
+/ 9 = "blankav.png"
+/ 10 = "lfrgreen-m.png"
+</item>
+
+<item introlavLS.F>
+/ 1 = "rflblue-f.png"
+/ 2 = "blankav.png"
+/ 3 = "rflblue-f.png"
+/ 4 = "blankav.png"
+/ 5 = "rflblue-f.png"
+/ 6 = "blankav.png"
+/ 7 = "rflblue-f.png"
+/ 8 = "blankav.png"
+/ 9 = "rflblue-f.png"
+/ 10 = "blankav.png"
+</item>
+
+<item introravLS.F>
+/ 1 = "blankav.png"
+/ 2 = "lfrblue-f.png"
+/ 3 = "blankav.png"
+/ 4 = "lfrblue-f.png"
+/ 5 = "blankav.png"
+/ 6 = "lfrblue-f.png"
+/ 7 = "blankav.png"
+/ 8 = "lfrblue-f.png"
+/ 9 = "blankav.png"
+/ 10 = "lfrblue-f.png"
+</item>
+
+<item introlavHS.F>
+/ 1 = "rflgreen-f.png"
+/ 2 = "blankav.png"
+/ 3 = "rflgreen-f.png"
+/ 4 = "blankav.png"
+/ 5 = "rflgreen-f.png"
+/ 6 = "blankav.png"
+/ 7 = "rflgreen-f.png"
+/ 8 = "blankav.png"
+/ 9 = "rflgreen-f.png"
+/ 10 = "blankav.png"
+</item>
+
+<item introravHS.F>
+/ 1 = "blankav.png"
+/ 2 = "lfrgreen-f.png"
+/ 3 = "blankav.png"
+/ 4 = "lfrgreen-f.png"
+/ 5 = "blankav.png"
+/ 6 = "lfrgreen-f.png"
+/ 7 = "blankav.png"
+/ 8 = "lfrgreen-f.png"
+/ 9 = "blankav.png"
+/ 10 = "lfrgreen-f.png"
+</item>
+
+<item introbg>
+/ 1 = "1357.jpg"
+/ 2 = "2357.jpg"
+/ 3 = "2358.jpg"
+/ 4 = "2457.jpg"
+/ 5 = "3457.jpg"
+/ 6 = "3567.jpg"
+/ 7 = "3568.jpg"
+/ 8 = "3578.jpg"
+/ 9 = "3579.jpg"
+/ 10 = "3589.jpg"
+</item>
+
+****************************************
+TARGETS: SET BY EXPERIMENT-LEVEL SCRIPT
+1 = low status
+2 = high status
+****************************************
+
+<item names>
+/ 1 = ""
+/ 2 = ""
+</item>
+
+<item target>
+/ 1 = "<%item.names.1%>"
+/ 2 = "<%item.names.2%>"
+</item>
+
+********
+AVATARS
+********
+
+<item Clav.M>
+/ 1 = "rflblue-m.png" 
+/ 2 = "rflgreen-m.png"
+/ 3 = "rflblue-m.png"
+/ 4 = "rflgreen-m.png"
+/ 5 = "rflblue-m.png"
+/ 6 = "rflgreen-m.png"
+/ 7 = "rflblue-m.png"
+/ 8 = "rflgreen-m.png"
+</item>
+
+<item Crav.M>
+/ 1 = "lfrgreen-m.png"
+/ 2 = "lfrblue-m.png"
+/ 3 = "lfrgreen-m.png"
+/ 4 = "lfrblue-m.png"
+/ 5 = "lfrgreen-m.png"
+/ 6 = "lfrblue-m.png"
+/ 7 = "lfrgreen-m.png"
+/ 8 = "lfrblue-m.png"
+</item>
+
+<item Ilav.parallelin.M>
+/ 1 = "rflblue-m.png"
+/ 2 = "rflgreen-m.png"
+</item>
+
+<item Ilav.parallelout.M>
+/ 1 = "lflblue-m.png"
+/ 2 = "lflgreen-m.png"
+</item>
+
+<item Ilav.outward.M>
+/ 1 = "lflblue-m.png"
+/ 2 = "lflblue-m.png"
+/ 3 = "lflgreen-m.png"
+/ 4 = "lflgreen-m.png"
+</item>
+
+<item Irav.parallelout.M>
+/ 1 = "rfrgreen-m.png"
+/ 2 = "rfrblue-m.png"
+</item>
+
+<item Irav.parallelin.M>
+/ 1 = "lfrgreen-m.png"
+/ 2 = "lfrblue-m.png"
+</item>
+
+<item Irav.outward.M>
+/ 1 = "rfrgreen-m.png"
+/ 2 = "rfrgreen-m.png"
+/ 3 = "rfrblue-m.png"
+/ 4 = "rfrblue-m.png"
+</item>
+
+<item Clav.F>
+/ 1 = "rflblue-f.png" 
+/ 2 = "rflgreen-f.png"
+/ 3 = "rflblue-f.png"
+/ 4 = "rflgreen-f.png"
+/ 5 = "rflblue-f.png"
+/ 6 = "rflgreen-f.png"
+/ 7 = "rflblue-f.png"
+/ 8 = "rflgreen-f.png"
+</item>
+
+<item Crav.F>
+/ 1 = "lfrgreen-f.png"
+/ 2 = "lfrblue-f.png"
+/ 3 = "lfrgreen-f.png"
+/ 4 = "lfrblue-f.png"
+/ 5 = "lfrgreen-f.png"
+/ 6 = "lfrblue-f.png"
+/ 7 = "lfrgreen-f.png"
+/ 8 = "lfrblue-f.png"
+</item>
+
+<item Ilav.parallelin.F>
+/ 1 = "rflblue-f.png"
+/ 2 = "rflgreen-f.png"
+</item>
+
+<item Ilav.parallelout.F>
+/ 1 = "lflblue-f.png"
+/ 2 = "lflgreen-f.png"
+</item>
+
+<item Ilav.outward.F>
+/ 1 = "lflblue-f.png"
+/ 2 = "lflblue-f.png"
+/ 3 = "lflgreen-f.png"
+/ 4 = "lflgreen-f.png"
+</item>
+
+<item Irav.parallelout.F>
+/ 1 = "rfrgreen-f.png"
+/ 2 = "rfrblue-f.png"
+</item>
+
+<item Irav.parallelin.F>
+/ 1 = "lfrgreen-f.png"
+/ 2 = "lfrblue-f.png"
+</item>
+
+<item Irav.outward.F>
+/ 1 = "rfrgreen-f.png"
+/ 2 = "rfrgreen-f.png"
+/ 3 = "rfrblue-f.png"
+/ 4 = "rfrblue-f.png"
+</item>
+
+**************
+VIRTUAL ROOMS
+**************
+
+<item C1room>
+/ 1 = "3578.jpg"
+/ 2 = "3578.jpg"
+/ 3 = "1357.jpg"
+/ 4 = "1357.jpg"
+/ 5 = "3579.jpg"
+/ 6 = "3579.jpg"
+/ 7 = "2357.jpg"
+/ 8 = "2357.jpg"
+</item>
+
+<item C2room>
+/ 1 = "3457.jpg"
+/ 2 = "3457.jpg"
+/ 3 = "3568.jpg"
+/ 4 = "3568.jpg"
+/ 5 = "3567.jpg"
+/ 6 = "3567.jpg"
+/ 7 = "2457.jpg"
+/ 8 = "2457.jpg"
+</item>
+
+<item ILS1room.parallel.leftin>
+/ 1 = "3578.jpg"
+/ 2 = "2457.jpg"
+</item>
+
+<item ILS1room.parallel.leftout>
+/ 1 = "3567.jpg"
+/ 2 = "2358.jpg"
+</item>
+
+<item ILS1room.outward>
+/ 1 = "3589.jpg"
+/ 2 = "3579.jpg"
+/ 3 = "2357.jpg"
+/ 4 = "1357.jpg"
+</item>
+
+<item ILS2room.parallel.leftin>
+/ 1 = "3568.jpg"
+/ 2 = "3578.jpg"
+</item>
+
+<item ILS2room.parallel.leftout>
+/ 1 = "2358.jpg"
+/ 2 = "3457.jpg"
+</item>
+
+<item ILS2room.outward>
+/ 1 = "2357.jpg"
+/ 2 = "1357.jpg"
+/ 3 = "3589.jpg"
+/ 4 = "3579.jpg"
+</item>
+
+<item IHS1room.parallel.leftin>
+/ 1 = "2457.jpg"
+/ 2 = "3578.jpg"
+</item>
+
+<item IHS1room.parallel.leftout>
+/ 1 = "2358.jpg"
+/ 2 = "3567.jpg"
+</item>
+
+<item IHS1room.outward>
+/ 1 = "2357.jpg"
+/ 2 = "1357.jpg"
+/ 3 = "3589.jpg"
+/ 4 = "3579.jpg"
+</item>
+
+<item IHS2room.parallel.leftin>
+/ 1 = "3578.jpg"
+/ 2 = "2457.jpg"
+</item>
+
+<item IHS2room.parallel.leftout>
+/ 1 = "3567.jpg"
+/ 2 = "2358.jpg"
+</item>
+
+<item IHS2room.outward>
+/ 1 = "3589.jpg"
+/ 2 = "3579.jpg"
+/ 3 = "2357.jpg"
+/ 4 = "1357.jpg"
+</item>
+
+*****************
+STIMULUS INDICES
+*****************
+
+These first three lists reflect the correct responses for instruction screens (1, 2) and the intro task (0). Keys need to be in scan codes.
+57 = space bar
+3 = 2 key
+2 = 1 key
+
+<list introcresp1>
+/ items = (57, 57, 3, 57, 57)
+/ selectionmode = sequence
+/ selectionrate = trial
+</list>
+
+<list introcresp2>
+/ items = (57, 57, 57, 2, 3)
+/ selectionmode = sequence
+/ selectionrate = trial
+</list>
+
+<list introcresp0>
+/ items = (2, 2, 2, 3, 3, 3, 3, 2, 2, 2)
+</list>
+
+Because stimulus lists index at the trial level, there is one tracker per trial type.
+
+<list tracker.introtask.LS>
+/ items = (1,2,3,4,5,6,7,8,9,10)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.introtask.HS>
+/ items = (1,2,3,4,5,6,7,8,9,10)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.CLS1>
+/ items = (1,2,3,4,5,6,7,8)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.CLS2>
+/ items = (1,2,3,4,5,6,7,8)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.CHS1>
+/ items = (1,2,3,4,5,6,7,8)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.CHS2>
+/ items = (1,2,3,4,5,6,7,8)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS1.outward>
+/ items = (1,2,3,4)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS1.parallel.leftin>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS1.parallel.leftout>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS2.outward>
+/ items = (1,2,3,4)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS2.parallel.leftin>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.ILS2.parallel.leftout>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS1.outward>
+/ items = (1,2,3,4)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS1.parallel.leftin>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS1.parallel.leftout>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS2.outward>
+/ items = (1,2,3,4)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS2.parallel.leftin>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+<list tracker.IHS2.parallel.leftout>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+**********************************************************************************************
+**********************************************************************************************
+STIMULI
+**********************************************************************************************
+**********************************************************************************************
+
+*************
+INSTRUCTIONS
+*************
+
+<text instruct1>
+/ items = instruct1
+/ hjustify = center
+/ size = (75%, 25%)
+/ position = (50%, 15%)
+/ valign = center
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text instruct2>
+/ items = instruct2
+/ hjustify = center
+/ size = (75%, 25%)
+/ position = (50%, 15%)
+/ valign = center
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text instruct3>
+/ items = instruct3
+/ hjustify = center
+/ size = (75%, 25%)
+/ position = (50%, 15%)
+/ valign = center
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text toproceed1>
+/ items = toproceed1
+/ hjustify = center
+/ size = (100%, 5%)
+/ position = (50%, 85%)
+/ valign = top
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text toproceed2>
+/ items = toproceed2
+/ hjustify = center
+/ size = (100%, 5%)
+/ position = (50%, 85%)
+/ valign = top
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text toproceed3>
+/ items = toproceed3
+/ hjustify = center
+/ size = (100%, 5%)
+/ position = (50%, 85%)
+/ valign = top
+/ select = sequence
+/ txbgcolor = (transparent)
+</text>
+
+<text finish>
+/ items = ("Thank you for completing the perspective-taking task.
+
+Take a moment to rest if you wish.  After this, we will have you complete a short attentional task.  
+
+When you are ready to continue, please press space bar.")
+/ position = (50%, 50%)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+*****************
+INTRO TASK STIMS
+*****************
+
+<picture intropic.M>
+/ erase = true(0,0,0)
+/ items = intropic.M
+/ position = (50%, 55%)
+/ size = (45.59%, 48.61%)
+/ select = sequence
+</picture>
+
+<picture introlavLS.M>
+/ items = introlavLS.M
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introravLS.M>
+/ items = introravLS.M
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introlavHS.M>
+/ items = introlavHS.M
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introravHS.M>
+/ items = introravHS.M
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture intropic.F>
+/ erase = true(0,0,0)
+/ items = intropic.F
+/ position = (50%, 55%)
+/ size = (45.59%, 48.61%)
+/ select = sequence
+</picture>
+
+<picture introlavLS.F>
+/ items = introlavLS.F
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introravLS.F>
+/ items = introravLS.F
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introlavHS.F>
+/ items = introlavHS.F
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introravHS.F>
+/ items = introravHS.F
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture introbg>
+/ items = introbg
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<text errorfb>
+/ items = ("Incorrect:~n~n~nRemember that avatars can see only dots in the area they are facing; they see only one side of their nearest barrier.  Pay close attention to the direction the avatar is facing.")
+/ position = (50%, 50%)
+/ txcolor = (255, 0, 0)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+************************
+PRACTICE BLOCK FEEDBACK
+************************
+
+<text pracblockfb.M>
+/ items = ("You got <%values.tracker.ACC%> out of <%block.3pp3pptaskpractice.M.trialcount%> trials correct.~n~n~nPlease press space bar to continue.")
+/ position = (50%, 50%)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+<text pracblockfb.F>
+/ items = ("You got <%values.tracker.ACC%> out of <%block.3pp3pptaskpractice.F.trialcount%> trials correct.~n~n~nPlease press space bar to continue.")
+/ position = (50%, 50%)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+<text pracblockpass>
+/ items = ("Well done.  You're now ready to start the experimental block.~n~n~nPlease press space bar to continue.")
+/ position = (50%, 50%)
+/ txcolor = (0, 128, 0)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+<text pracblockfail>
+/ items = ("Let's try again.  This time, try to get at least 10 trials correct.~n~n~nTo restart the practice, please press space bar.")
+/ position = (50%, 50%)
+/ size = (50%, 50%)
+/ valign = center
+</text>
+
+*************
+PROMPT STIMS
+*************
+
+<text fix1>
+/ items = ("+   +")
+/ position = (50%, values.prompt.y)
+</text>
+
+<text erasefix1>
+/ items = ("+   +")
+/ position = (50%, values.prompt.y)
+/ txcolor = (0, 0, 0)
+</text>
+
+<text fix2>
+/ items = ("+ +")
+/ select = sequence
+/ position = (50%, values.prompt.y)
+</text>
+
+<text erasefix2>
+/ items = ("+ +")
+/ position = (50%, values.prompt.y)
+/ txcolor = (0, 0, 0)
+</text>
+
+<text fix3>
+/ items = ("+")
+/ select = sequence
+/ position = (50%, values.prompt.y)
+</text>
+
+<text target>
+/ items = target
+/ select = values.trialtarg
+/ position = (50%, values.prompt.y)
+</text>
+
+<text erasetarg>
+/ items = target
+/ select = values.trialtarg
+/ position = (50%, values.prompt.y)
+/ txcolor = (0, 0, 0)
+</text>
+
+********
+AVATARS
+********
+
+<picture Clav.M>
+/ items = Clav.M
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Crav.M>
+/ items = Crav.M
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.parallel.leftin.M>
+/ items = Ilav.parallelin.M
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.parallel.leftout.M>
+/ items = Ilav.parallelout.M
+/ position = (values.lav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.outward.M>
+/ items = Ilav.outward.M
+/ position = (values.lav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.parallel.leftout.M>
+/ items = Irav.parallelin.M
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.parallel.leftin.M>
+/ items = Irav.parallelout.M
+/ position = (values.rav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.outward.M>
+/ items = Irav.outward.M
+/ position = (values.rav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Clav.F>
+/ items = Clav.F
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Crav.F>
+/ items = Crav.F
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.parallel.leftin.F>
+/ items = Ilav.parallelin.F
+/ position = (values.lav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.parallel.leftout.F>
+/ items = Ilav.parallelout.F
+/ position = (values.lav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Ilav.outward.F>
+/ items = Ilav.outward.F
+/ position = (values.lav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.parallel.leftout.F>
+/ items = Irav.parallelin.F
+/ position = (values.rav.inward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.parallel.leftin.F>
+/ items = Irav.parallelout.F
+/ position = (values.rav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+<picture Irav.outward.F>
+/ items = Irav.outward.F
+/ position = (values.rav.outward.x, values.avatar.y)
+/ size = (8.13%, 26.95%)
+/ select = values.trialindex
+</picture>
+
+**************
+VIRTUAL ROOMS
+**************
+
+<picture C1room>
+/ items = C1room
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture C2room>
+/ items = C2room
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS1room.parallel.leftin>
+/ items = ILS1room.parallel.leftin
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS1room.parallel.leftout>
+/ items = ILS1room.parallel.leftout
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS1room.outward>
+/ items = ILS1room.outward
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS2room.parallel.leftin>
+/ items = ILS2room.parallel.leftin
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS2room.parallel.leftout>
+/ items = ILS2room.parallel.leftout
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture ILS2room.outward>
+/ items = ILS2room.outward
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS1room.parallel.leftin>
+/ items = IHS1room.parallel.leftin
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS1room.parallel.leftout>
+/ items = IHS1room.parallel.leftout
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS1room.outward>
+/ items = IHS1room.outward
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS2room.parallel.leftin>
+/ items = IHS2room.parallel.leftin
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS2room.parallel.leftout>
+/ items = IHS2room.parallel.leftout
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+<picture IHS2room.outward>
+/ items = IHS2room.outward
+/ position = (50%, 50%)
+/ size = (91.17%, 91.15%)
+/ select = values.trialindex
+</picture>
+
+*****************
+POST-STIM SCREEN
+*****************
+
+<shape blank>
+/ shape = rectangle
+/ color = black
+/ size = (100%, 100%)
+</shape>
+
+**********************************************************************************************
+**********************************************************************************************
+TRIALS
+**********************************************************************************************
+**********************************************************************************************
+
+**********************************************************************************************
+Instruction and Practice Trials
+**********************************************************************************************
+
+<trial instruct1.M>
+/ stimulustimes = [0=instruct1,toproceed1,intropic.M]
+/ responsemode = correct
+/ validresponse = (57, 3)
+/ iscorrectresponse = [trial.instruct1.M.response == list.introcresp1.nextvalue]
+</trial>
+
+<trial instruct1.F>
+/ stimulustimes = [0=instruct1,toproceed1,intropic.F]
+/ responsemode = correct
+/ validresponse = (57, 3)
+/ iscorrectresponse = [trial.instruct1.F.response == list.introcresp1.nextvalue]
+</trial>
+
+<trial instruct2>
+/ stimulustimes = [0=instruct2,toproceed2]
+/ responsemode = correct
+/ validresponse = (57, 2, 3)
+/ iscorrectresponse = [trial.instruct2.response == list.introcresp2.nextvalue]
+</trial>
+
+<trial instruct3>
+/ stimulustimes = [0=instruct3,toproceed3]
+/ responsemode = correct
+/ validresponse = (57, 3)
+/ iscorrectresponse = [trial.instruct3.response == list.introcresp1.nextvalue]
+</trial>
+
+<trial introtask.LS.M>
+/ ontrialbegin = [values.trialindex = list.tracker.introtask.ls.nextindex]
+/ stimulustimes = [0=fix1; 300=erasefix1,fix2; 600=erasefix2,fix3; 900=introbg,introlavLS.M,introravLS.M]
+/ validresponse = (2, 3)
+/ iscorrectresponse = [trial.introtask.LS.M.response == list.introcresp0.item(values.trialindex)]
+/ beginresponsetime = 900
+/ errormessage = true(errorfb, 3000)
+</trial>
+
+<trial introtask.HS.M>
+/ ontrialbegin = [values.trialindex = list.tracker.introtask.hs.nextindex]
+/ stimulustimes = [0=fix1; 300=erasefix1,fix2; 600=erasefix2,fix3; 900=introbg,introlavHS.M,introravHS.M]
+/ validresponse = (2, 3)
+/ iscorrectresponse = [trial.introtask.HS.M.response == list.introcresp0.item(values.trialindex)]
+/ beginresponsetime = 900
+/ errormessage = true(errorfb, 3000)
+</trial>
+
+<trial introtask.LS.F>
+/ ontrialbegin = [values.trialindex = list.tracker.introtask.ls.nextindex]
+/ stimulustimes = [0=fix1; 300=erasefix1,fix2; 600=erasefix2,fix3; 900=introbg,introlavLS.F,introravLS.F]
+/ validresponse = (2, 3)
+/ iscorrectresponse = [trial.introtask.LS.F.response == list.introcresp0.item(values.trialindex)]
+/ beginresponsetime = 900
+/ errormessage = true(errorfb, 3000)
+</trial>
+
+<trial introtask.HS.F>
+/ ontrialbegin = [values.trialindex = list.tracker.introtask.hs.nextindex]
+/ stimulustimes = [0=fix1; 300=erasefix1,fix2; 600=erasefix2,fix3; 900=introbg,introlavHS.F,introravHS.F]
+/ validresponse = (2, 3)
+/ iscorrectresponse = [trial.introtask.HS.F.response == list.introcresp0.item(values.trialindex)]
+/ beginresponsetime = 900
+/ errormessage = true(errorfb, 3000)
+</trial>
+
+<trial pracblockfb.M>
+/ stimulustimes = [0=pracblockfb.M]
+/ validresponse = (57)
+/ branch = [if (values.tracker.ACC < 10) trial.pracblockfail]
+/ branch = [if (values.tracker.ACC >= 10) trial.pracblockpass]
+</trial>
+
+<trial pracblockfb.F>
+/ stimulustimes = [0=pracblockfb.F]
+/ validresponse = (57)
+/ branch = [if (values.tracker.ACC < 10) trial.pracblockfail]
+/ branch = [if (values.tracker.ACC >= 10) trial.pracblockpass]
+</trial>
+
+<trial pracblockfail>
+/ stimulustimes = [0=pracblockfail]
+/ validresponse = (57)
+</trial>
+
+<trial pracblockpass>
+/ stimulustimes = [0=pracblockpass]
+/ validresponse = (57)
+</trial>
+
+<trial finish>
+/ stimulustimes = [0=finish]
+/ validresponse = (57)
+</trial>
+
+**********************************************************************************************
+Congruent Trials: E.G., CLS1 = Congruent, Low Status Target, 1 is Correct Response...
+**********************************************************************************************
+
+<trial CLS1.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.CLS1.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C1room,Clav.M,Crav.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CLS1.M.correct]
+</trial>
+
+<trial CLS2.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.CLS2.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C2room,Clav.M,Crav.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CLS2.M.correct]
+</trial>
+
+<trial CHS1.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.CHS1.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C1room,Clav.M,Crav.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CHS1.M.correct]
+</trial>
+
+<trial CHS2.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.CHS2.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C2room,Clav.M,Crav.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CHS2.M.correct]
+</trial>
+
+<trial CLS1.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.CLS1.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C1room,Clav.F,Crav.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CLS1.F.correct]
+</trial>
+
+<trial CLS2.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.CLS2.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C2room,Clav.F,Crav.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CLS2.F.correct]
+</trial>
+
+<trial CHS1.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.CHS1.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C1room,Clav.F,Crav.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CHS1.F.correct]
+</trial>
+
+<trial CHS2.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.CHS2.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=C2room,Clav.F,Crav.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.CHS2.F.correct]
+</trial>
+
+**********************************************************************************************
+**********************************************************************************************
+Incongruent Trials: Due to the complexity of this trial type, there is a greater diversity of
+incongruent trials in Inquisit.  In brief, incongruent trials are subdivided into trials in 
+which avatars both face toward the periphery (i.e., "outward") and trials in which the avatars 
+are oriented in parallel (i.e., "parallel").  The latter trial type is further subdivided into 
+trials in which the left avatar faces toward the middle (i.e., "leftin") and trials in which 
+the left avatar faces toward the periphery (i.e., "leftout").  Trials were programmed in this 
+way due to the limitation of Inquisit that stimulus parameters (e.g., coordinates) cannot be 
+changed easily on the fly, unlike in E-Prime.
+**********************************************************************************************
+**********************************************************************************************
+
+*****
+ILS1
+*****
+
+<trial ILS1.parallel.leftin.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.parallel.leftin,Ilav.parallel.leftin.M,Irav.parallel.leftin.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.parallel.leftin.M.correct]
+</trial>
+
+<trial ILS1.parallel.leftout.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.parallel.leftout,Ilav.parallel.leftout.M,Irav.parallel.leftout.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.parallel.leftout.M.correct]
+</trial>
+
+<trial ILS1.outward.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.outward,Ilav.outward.M,Irav.outward.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.outward.M.correct]
+</trial>
+
+<trial ILS1.parallel.leftin.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.parallel.leftin,Ilav.parallel.leftin.F,Irav.parallel.leftin.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.parallel.leftin.F.correct]
+</trial>
+
+<trial ILS1.parallel.leftout.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.parallel.leftout,Ilav.parallel.leftout.F,Irav.parallel.leftout.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.parallel.leftout.F.correct]
+</trial>
+
+<trial ILS1.outward.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS1.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS1room.outward,Ilav.outward.F,Irav.outward.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS1.outward.F.correct]
+</trial>
+
+*****
+ILS2
+*****
+
+<trial ILS2.parallel.leftin.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.parallel.leftin,Ilav.parallel.leftin.M,Irav.parallel.leftin.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.parallel.leftin.M.correct]
+</trial>
+
+<trial ILS2.parallel.leftout.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.parallel.leftout,Ilav.parallel.leftout.M,Irav.parallel.leftout.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.parallel.leftout.M.correct]
+</trial>
+
+<trial ILS2.outward.M>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.outward,Ilav.outward.M,Irav.outward.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.outward.M.correct]
+</trial>
+
+<trial ILS2.parallel.leftin.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.parallel.leftin,Ilav.parallel.leftin.F,Irav.parallel.leftin.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.parallel.leftin.F.correct]
+</trial>
+
+<trial ILS2.parallel.leftout.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.parallel.leftout,Ilav.parallel.leftout.F,Irav.parallel.leftout.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.parallel.leftout.F.correct]
+</trial>
+
+<trial ILS2.outward.F>
+/ ontrialbegin = [values.trialtarg = 1; values.trialindex = list.tracker.ILS2.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=ILS2room.outward,Ilav.outward.F,Irav.outward.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.ILS2.outward.F.correct]
+</trial>
+
+*****
+IHS1
+*****
+
+<trial IHS1.parallel.leftin.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.parallel.leftin,Ilav.parallel.leftin.M,Irav.parallel.leftin.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.parallel.leftin.M.correct]
+</trial>
+
+<trial IHS1.parallel.leftout.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.parallel.leftout,Ilav.parallel.leftout.M,Irav.parallel.leftout.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.parallel.leftout.M.correct]
+</trial>
+
+<trial IHS1.outward.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.outward,Ilav.outward.M,Irav.outward.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.outward.M.correct]
+</trial>
+
+<trial IHS1.parallel.leftin.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.parallel.leftin,Ilav.parallel.leftin.F,Irav.parallel.leftin.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.parallel.leftin.F.correct]
+</trial>
+
+<trial IHS1.parallel.leftout.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.parallel.leftout,Ilav.parallel.leftout.F,Irav.parallel.leftout.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.parallel.leftout.F.correct]
+</trial>
+
+<trial IHS1.outward.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS1.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS1room.outward,Ilav.outward.F,Irav.outward.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("1")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS1.outward.F.correct]
+</trial>
+
+*****
+IHS2
+*****
+
+<trial IHS2.parallel.leftin.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.parallel.leftin,Ilav.parallel.leftin.M,Irav.parallel.leftin.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.parallel.leftin.M.correct]
+</trial>
+
+<trial IHS2.parallel.leftout.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.parallel.leftout,Ilav.parallel.leftout.M,Irav.parallel.leftout.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.parallel.leftout.M.correct]
+</trial>
+
+<trial IHS2.outward.M>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.outward,Ilav.outward.M,Irav.outward.M; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.outward.M.correct]
+</trial>
+
+<trial IHS2.parallel.leftin.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.parallel.leftin.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.parallel.leftin,Ilav.parallel.leftin.F,Irav.parallel.leftin.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.parallel.leftin.F.correct]
+</trial>
+
+<trial IHS2.parallel.leftout.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.parallel.leftout.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.parallel.leftout,Ilav.parallel.leftout.F,Irav.parallel.leftout.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.parallel.leftout.F.correct]
+</trial>
+
+<trial IHS2.outward.F>
+/ ontrialbegin = [values.trialtarg = 2; values.trialindex = list.tracker.IHS2.outward.nextindex]
+/ stimulustimes = [0=blank; 1000=target; 2000=erasetarg,fix1; 2300=erasefix1,fix2; 2600=erasefix2,fix3; 2900=IHS2room.outward,Ilav.outward.F,Irav.outward.F; 3400=blank]
+/ validresponse = ("1", "2")
+/ correctresponse = ("2")
+/ beginresponsetime = 2900
+/ timeout = 4000
+/ ontrialend = [values.tracker.ACC = values.tracker.ACC + trial.IHS2.outward.F.correct]
+</trial>
+
+**********************************************************************************************
+**********************************************************************************************
+BLOCKS
+**********************************************************************************************
+**********************************************************************************************
+
+<block 3PP3PPTask.M>
+/ trials = [1-3=instruct3; 4-131=noreplace(
+CLS1.M, CLS1.M, CLS1.M, CLS1.M, 
+CLS2.M, CLS2.M, CLS2.M, CLS2.M,
+CHS1.M, CHS1.M, CHS1.M, CHS1.M,
+CHS2.M, CHS2.M, CHS2.M, CHS2.M, 
+ILS1.parallel.leftin.M, ILS1.parallel.leftout.M, ILS1.outward.M, ILS1.outward.M 
+ILS2.parallel.leftin.M, ILS2.parallel.leftout.M, ILS2.outward.M, ILS2.outward.M
+IHS1.parallel.leftin.M, IHS1.parallel.leftout.M, IHS1.outward.M, IHS1.outward.M
+IHS2.parallel.leftin.M, IHS2.parallel.leftout.M, IHS2.outward.M, IHS2.outward.M)]
+</block>
+
+Practice block concludes the first time the participant gets at least 10 out of 12 trials correct or after 5 iterations.
+
+<block 3PP3PPTaskPractice.M>
+/ onblockbegin = [values.tracker.ACC = 0]
+/ trials = [1-12=noreplace(
+CLS1.M, CLS1.M, CLS1.M, CLS1.M, 
+CLS2.M, CLS2.M, CLS2.M, CLS2.M,
+CHS1.M, CHS1.M, CHS1.M, CHS1.M,
+CHS2.M, CHS2.M, CHS2.M, CHS2.M, 
+ILS1.parallel.leftin.M, ILS1.parallel.leftout.M, ILS1.outward.M, ILS1.outward.M 
+ILS2.parallel.leftin.M, ILS2.parallel.leftout.M, ILS2.outward.M, ILS2.outward.M
+IHS1.parallel.leftin.M, IHS1.parallel.leftout.M, IHS1.outward.M, IHS1.outward.M
+IHS2.parallel.leftin.M, IHS2.parallel.leftout.M, IHS2.outward.M, IHS2.outward.M);
+13=pracblockfb.M]
+/ onblockend = [list.tracker.chs1.resetselection(); 
+list.tracker.chs2.resetselection();
+list.tracker.cls1.resetselection(); 
+list.tracker.cls2.resetselection();
+list.tracker.ihs1.outward.resetselection(); list.tracker.ihs1.parallel.leftin.resetselection(); list.tracker.ihs1.parallel.leftout.resetselection();
+list.tracker.ihs2.outward.resetselection(); list.tracker.ihs2.parallel.leftin.resetselection(); list.tracker.ihs2.parallel.leftout.resetselection();
+list.tracker.ils1.outward.resetselection(); list.tracker.ils1.parallel.leftin.resetselection(); list.tracker.ils1.parallel.leftout.resetselection();
+list.tracker.ils2.outward.resetselection(); list.tracker.ils2.parallel.leftin.resetselection(); list.tracker.ils2.parallel.leftout.resetselection()]
+/ branch = [if (values.tracker.ACC >= 10) noblock]
+/ branch = [if (block.3PP3PPTaskPractice.M.count > 5) noblock]
+/ branch = [if (values.tracker.ACC < 10) block.3PP3PPTaskPractice.M]
+</block>
+
+<block 3PP3PPTaskInstructions.M>
+/ trials = [1-5=instruct1.M; 6-25=noreplace(introtask.ls.M,introtask.hs.M); 26-30=instruct2]
+</block>
+
+<block 3PP3PPTask.F>
+/ trials = [1-3=instruct3; 4-131=noreplace(
+CLS1.F, CLS1.F, CLS1.F, CLS1.F, 
+CLS2.F, CLS2.F, CLS2.F, CLS2.F,
+CHS1.F, CHS1.F, CHS1.F, CHS1.F,
+CHS2.F, CHS2.F, CHS2.F, CHS2.F, 
+ILS1.parallel.leftin.F, ILS1.parallel.leftout.F, ILS1.outward.F, ILS1.outward.F 
+ILS2.parallel.leftin.F, ILS2.parallel.leftout.F, ILS2.outward.F, ILS2.outward.F
+IHS1.parallel.leftin.F, IHS1.parallel.leftout.F, IHS1.outward.F, IHS1.outward.F
+IHS2.parallel.leftin.F, IHS2.parallel.leftout.F, IHS2.outward.F, IHS2.outward.F)]
+</block>
+
+Practice block concludes the first time the participant gets at least 10 out of 12 trials correct or after 5 iterations.
+
+<block 3PP3PPTaskPractice.F>
+/ onblockbegin = [values.tracker.ACC = 0]
+/ trials = [1-12=noreplace(
+CLS1.F, CLS1.F, CLS1.F, CLS1.F, 
+CLS2.F, CLS2.F, CLS2.F, CLS2.F,
+CHS1.F, CHS1.F, CHS1.F, CHS1.F,
+CHS2.F, CHS2.F, CHS2.F, CHS2.F, 
+ILS1.parallel.leftin.F, ILS1.parallel.leftout.F, ILS1.outward.F, ILS1.outward.F 
+ILS2.parallel.leftin.F, ILS2.parallel.leftout.F, ILS2.outward.F, ILS2.outward.F
+IHS1.parallel.leftin.F, IHS1.parallel.leftout.F, IHS1.outward.F, IHS1.outward.F
+IHS2.parallel.leftin.F, IHS2.parallel.leftout.F, IHS2.outward.F, IHS2.outward.F);
+13=pracblockfb.F]
+/ onblockend = [list.tracker.chs1.resetselection(); 
+list.tracker.chs2.resetselection();
+list.tracker.cls1.resetselection(); 
+list.tracker.cls2.resetselection();
+list.tracker.ihs1.outward.resetselection(); list.tracker.ihs1.parallel.leftin.resetselection(); list.tracker.ihs1.parallel.leftout.resetselection();
+list.tracker.ihs2.outward.resetselection(); list.tracker.ihs2.parallel.leftin.resetselection(); list.tracker.ihs2.parallel.leftout.resetselection();
+list.tracker.ils1.outward.resetselection(); list.tracker.ils1.parallel.leftin.resetselection(); list.tracker.ils1.parallel.leftout.resetselection();
+list.tracker.ils2.outward.resetselection(); list.tracker.ils2.parallel.leftin.resetselection(); list.tracker.ils2.parallel.leftout.resetselection()]
+/ branch = [if (values.tracker.ACC >= 10) noblock]
+/ branch = [if (block.3PP3PPTaskPractice.F.count > 5) noblock]
+/ branch = [if (values.tracker.ACC < 10) block.3PP3PPTaskPractice.F]
+</block>
+
+<block 3PP3PPTaskInstructions.F>
+/ trials = [1-5=instruct1.F; 6-25=noreplace(introtask.ls.F,introtask.hs.F); 26-30=instruct2]
+</block>
+
+<block finish>
+/ trials = [1=finish]
+</block>
+
+**********************************************************************************************
+**********************************************************************************************
+EXPERIMENT: Avatar names are counterbalanced here.  See twin .iqx file for counterbalancing 
+of color assignment.  Avatar gender is determined here based on the participant's response
+to the gender survey item at the start of the script.  In this script, gender selection is
+disabled.
+**********************************************************************************************
+**********************************************************************************************
+
+DO NOT change the expt names!  Inquisit appears to present expts in alphabetical order.
+
+expt GenderOpt>
+/ blocks = [1=genderopt]
+</expt>
+
+<expt VPT.3PP3PP.Order1M>
+/ onexptbegin = [setitem(item.names, "James", 1); setitem(item.names, "Eric", 2)]
+/ blocks = [1=3PP3PPTaskInstructions.M; 2=3PP3PPTaskPractice.M; 3=3PP3PPTask.M; 4=finish]
+/ onexptend = [values.completed = 1]
+/ subjects = (1 of 2)
+/ skip = [dropdown.genderopt.response == "female"]
+</expt>
+
+expt VPT.3PP3PP.Order1F>
+/ onexptbegin = [setitem(item.names, "Jenny", 1); setitem(item.names, "Erica", 2)]
+/ blocks = [1=individuate.before; 2=3PP3PPTaskInstructions.F; 3=3PP3PPTaskPractice.F; 4=3PP3PPTask.F; 5=individuate.after; 6=finish]
+/ onexptend = [values.completed = 1]
+/ subjects = (1 of 2)
+/ skip = [dropdown.genderopt.response == "male"]
+</expt>
+
+<expt VPT.3PP3PP.Order2M>
+/ onexptbegin = [setitem(item.names, "Eric", 1); setitem(item.names, "James", 2)]
+/ blocks = [1=3PP3PPTaskInstructions.M; 2=3PP3PPTaskPractice.M; 3=3PP3PPTask.M; 4=finish]
+/ onexptend = [values.completed = 1]
+/ subjects = (2 of 2)
+/ skip = [dropdown.genderopt.response == "female"]
+</expt>
+
+expt VPT.3PP3PP.Order2F>
+/ onexptbegin = [setitem(item.names, "Erica", 1); setitem(item.names, "Jenny", 2)]
+/ blocks = [1=individuate.before; 2=3PP3PPTaskInstructions.F; 3=3PP3PPTaskPractice.F; 4=3PP3PPTask.F; 5=individuate.after; 6=finish]
+/ onexptend = [values.completed = 1]
+/ subjects = (2 of 2)
+/ skip = [dropdown.genderopt.response == "male"]
+</expt>
+
+**********************************************************************************************
+**********************************************************************************************
+DATA
+**********************************************************************************************
+**********************************************************************************************
+
+************
+raw data:
+************
+build:							Inquisit build
+date, time, subject, group:		date and time script was run with the current subject/groupnumber 
+blockcode, blocknum:			the name and number of the current block
+trialcode, trialnum: 			the name and number of the currently recorded trial
+									(Note: not all trials that are run might record data) 
+response:						the participant's response
+correct:						the correctness of the response (1 = correct; 0 = incorrect)
+latency: 						the response latency (in ms)
+stimulusitem:					the presented stimuli in order of trial presentation
+
+<data>
+/ file = "3PP3PPTask_rawdata.iqdat"
+/ separatefiles = true
+/ columns = [build, date, time, subject, group, blocknum, blockcode, trialnum, trialcode, response, correct, latency, 
+stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem,
+stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem,
+stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem]
+</data>
+
+************
+summary data
+************
+
+script.startdate:				date script was run
+script.starttime:				time script was started
+script.subjectid:				subject id number
+script.groupid:					group id number
+script.elapsedtime:				time it took to run script (in ms)
+completed:						0 = script was not completed (script was prematurely aborted); 1 = script was completed (all conditions run)
+
+<summarydata >
+/file = "3PP3PPTask_summary.iqdat"
+/columns = [script.startdate, script.starttime, script.subjectid, script.elapsedtime, values.completed]
+</summarydata>
+
+**********************************************************************************************
+**********************************************************************************************
+DEFAULTS
+**********************************************************************************************
+**********************************************************************************************
+requires Inquisit 4
+
+<defaults>
+/ minimumversion = "4.0.2.0"
+/ fontstyle = ("Arial", 3.52%, false, false, false, false, 5, 0)
+/ screencolor = black
+/ txcolor = white
+/ txbgcolor = black
+/ canvasaspectratio = (5, 3)
+</defaults>
+
+**********************************************************************************************
+End of File
+**********************************************************************************************

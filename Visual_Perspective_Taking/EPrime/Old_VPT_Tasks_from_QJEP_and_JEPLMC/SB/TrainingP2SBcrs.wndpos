@@ -1,0 +1,14 @@
+[Object0]
+Name=MatchSess
+WindowState=0
+Left=200
+Top=200
+Width=684
+Height=497
+[Object1]
+Name=SessProc
+WindowState=0
+Left=233
+Top=255
+Width=668
+Height=459

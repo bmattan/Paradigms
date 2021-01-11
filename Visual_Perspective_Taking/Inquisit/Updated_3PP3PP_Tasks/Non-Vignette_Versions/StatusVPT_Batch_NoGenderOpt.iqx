@@ -1,0 +1,31 @@
+﻿<batch>
+/subjects = (1 of 4)
+/groupassignment = subjectnumber
+/file = "StatusTraining_VersionA_NoGenderOpt.iqx"
+/file = "3PP3PPTask_VersionA_NoGenderOpt.iqx"
+/file = "AttentionalCueing.iqx"
+</batch>
+
+<batch>
+/subjects = (2 of 4)
+/groupassignment = subjectnumber
+/file = "StatusTraining_VersionA_NoGenderOpt.iqx"
+/file = "3PP3PPTask_VersionA_NoGenderOpt.iqx"
+/file = "AttentionalCueing.iqx"
+</batch>
+
+<batch>
+/subjects = (3 of 4)
+/groupassignment = subjectnumber
+/file = "StatusTraining_VersionB_NoGenderOpt.iqx"
+/file = "3PP3PPTask_VersionB_NoGenderOpt.iqx"
+/file = "AttentionalCueing.iqx"
+</batch>
+
+<batch>
+/subjects = (4 of 4)
+/groupassignment = subjectnumber
+/file = "StatusTraining_VersionB_NoGenderOpt.iqx"
+/file = "3PP3PPTask_VersionB_NoGenderOpt.iqx"
+/file = "AttentionalCueing.iqx"
+</batch>

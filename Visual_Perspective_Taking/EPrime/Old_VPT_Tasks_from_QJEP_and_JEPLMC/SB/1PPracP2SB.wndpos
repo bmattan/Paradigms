@@ -1,0 +1,13 @@
+[Object0]
+Name=StatsReset
+WindowState=1
+[Object1]
+Name=TriPrompt2
+WindowState=1
+[Object2]
+Name=BlockList
+WindowState=0
+Left=154
+Top=203
+Width=744
+Height=598

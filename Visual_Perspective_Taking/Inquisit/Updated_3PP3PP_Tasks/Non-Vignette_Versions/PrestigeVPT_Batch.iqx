@@ -1,0 +1,27 @@
+﻿<batch>
+/subjects = (1 of 4)
+/groupassignment = subjectnumber
+/file = "PrestigeTraining_VersionA_GenderOpt.iqx"
+/file = "3PP3PPTask_PreVersionA_GenderOpt.iqx"
+</batch>
+
+<batch>
+/subjects = (2 of 4)
+/groupassignment = subjectnumber
+/file = "PrestigeTraining_VersionA_GenderOpt.iqx"
+/file = "3PP3PPTask_PreVersionA_GenderOpt.iqx"
+</batch>
+
+<batch>
+/subjects = (3 of 4)
+/groupassignment = subjectnumber
+/file = "PrestigeTraining_VersionB_GenderOpt.iqx"
+/file = "3PP3PPTask_PreVersionB_GenderOpt.iqx"
+</batch>
+
+<batch>
+/subjects = (4 of 4)
+/groupassignment = subjectnumber
+/file = "PrestigeTraining_VersionB_GenderOpt.iqx"
+/file = "3PP3PPTask_PreVersionB_GenderOpt.iqx"
+</batch>

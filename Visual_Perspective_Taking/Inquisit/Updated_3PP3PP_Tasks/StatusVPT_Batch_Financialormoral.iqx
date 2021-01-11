@@ -1,0 +1,55 @@
+﻿<batch>
+/subjects = (1 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Financial_VersionA.iqx"
+/file = "3PP3PPTask_Financial_VersionA.iqx"
+</batch>
+
+<batch>
+/subjects = (2 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Financial_VersionA.iqx"
+/file = "3PP3PPTask_Financial_VersionA.iqx"
+</batch>
+
+<batch>
+/subjects = (3 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Financial_VersionB.iqx"
+/file = "3PP3PPTask_Financial_VersionB.iqx"
+</batch>
+
+<batch>
+/subjects = (4 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Financial_VersionB.iqx"
+/file = "3PP3PPTask_Financial_VersionB.iqx"
+</batch>
+
+<batch>
+/subjects = (5 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_MoralVersionA.iqx"
+/file = "3PP3PPTask_Moral_VersionA.iqx"
+</batch>
+
+<batch>
+/subjects = (6 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_MoralVersionA.iqx"
+/file = "3PP3PPTask_Moral_VersionA.iqx"
+</batch>
+
+<batch>
+/subjects = (7 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Moral_VersionB.iqx"
+/file = "3PP3PPTask_Moral_VersionB.iqx"
+</batch>
+
+<batch>
+/subjects = (8 of 8)
+/groupassignment = subjectnumber
+/file = "StatusTraining_Moral_VersionB.iqx"
+/file = "3PP3PPTask_Moral_VersionB.iqx"
+</batch>

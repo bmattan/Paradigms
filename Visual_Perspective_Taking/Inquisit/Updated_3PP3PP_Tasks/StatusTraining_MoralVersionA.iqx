@@ -1,0 +1,628 @@
+﻿***************Status Training Program***************
+
+This program trains participants to associate two colors with two levels of social status.
+
+BLUE = LOW STATUS
+GREEN = HIGH STATUS
+
+*****************data*****************
+
+<data>
+/ columns=[subject, date, time, blockcode, trialcode, trialnum, latency, response, correct, 
+stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber, stimulusitem, stimulusnumber,
+stimulusitem, stimulusnumber]
+</data>
+
+***************defaults***************
+
+<defaults>
+/ screencolor = (255,255,255)
+/ fontstyle = ("Arial", 3%, true)
+/ txbgcolor = (255, 255, 255)
+/ txcolor = (0, 0, 0)
+/ inputdevice = keyboard
+/ canvasaspectratio = (5, 3)
+</defaults>
+
+<values>
+/ trialindex = 0
+</values>
+
+***********gender selection***********
+
+<dropdown genderopt>
+/ caption = "Please select the gender with which you most strongly identify.  Please select from the dropdown menu below.~n~n~n"
+/ txcolor = (0,0,0)
+/ options = ("female", "male")
+</dropdown>
+
+<surveypage genderopt>
+/ questions = [1=genderopt]
+</surveypage>
+
+<dropdown genderconf>
+/ caption = "You indicated that you most strongly identify with <%dropdown.genderopt.response%>.~n~n~nIs this correct?~n~n~n"
+/ txcolor = (0,0,0)
+/ defaultresponse = "no"
+/ options = ("yes", "no")
+</dropdown>
+
+<surveypage genderconf>
+/ questions = [1=genderconf]
+</surveypage>
+
+<survey genderopt>
+/ pages=[1=genderopt; 2=genderconf]
+/ screencolor=white
+/ txcolor=black
+/ showbackbutton=true
+/ showpagenumbers=false
+/ navigationbuttonfontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+/ branch = [if (dropdown.genderconf.response == "yes") noblock]
+/ branch = [if (dropdown.genderconf.response == "no") survey.genderopt]
+</survey>
+
+*****************individuation survey********************
+
+<radiobuttons job.LS>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+/ correctresponse = ("mechanic")
+</radiobuttons>
+
+<radiobuttons job.HS>
+/ caption = "What is this person's occupation?"
+/ options = ("mechanic", "wait staff", "janitor", "accountant", "consultant", "director")
+/ orientation = horizontal
+/ correctresponse = ("director")
+</radiobuttons>
+
+<radiobuttons education.LS>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+/ correctresponse = ("high school diploma")
+</radiobuttons>
+
+<radiobuttons education.HS>
+/ caption = "What is the highest degree this person has attained?"
+/ options = ("no degree", "high school diploma", "associate's", "bachelor's", "master's", "PhD")
+/ orientation = horizontal
+/ correctresponse = ("master's")
+</radiobuttons>
+
+<radiobuttons income>
+/ caption = "How much do you think this person earns every year?"
+/ options = ("less than $30,000", "$30,000-$40,000", "$40,000-$50,000", "$50,000-$60,000", "$60,000-$70,000", "$70,000-$80,000", "$80,000-$90,000", "$90,000-$100,000", "more than $100,000")
+/ orientation = vertical
+</radiobuttons>
+
+<surveypage individuate.LS>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(1)%> (blue avatar).  When you are ready, please answer the questions below."
+/ questions = [1=job.LS; 2=education.LS; 3=income]
+</surveypage>
+
+<surveypage individuate.HS>
+/ caption = "Take a moment to reflect on the story you read about <%item.names.item(2)%> (green avatar).  When you are ready, please answer the questions below."
+/ questions = [1=job.HS; 2=education.HS; 3=income]
+</surveypage>
+
+<survey individuate>
+/ pages = [1-2=noreplace(individuate.LS, individuate.HS)]
+/ screencolor=white
+/ txcolor=black
+/ showbackbutton=false
+/ showpagenumbers=false
+/ showquestionnumbers=false
+/ navigationbuttonfontstyle = ("Arial", 3%, false, false, false, false, 5, 0)
+</survey>
+
+***************introductions to avatars******************
+
+<item names>
+/1 = ""
+/2 = ""
+</item>
+
+<picture frontavatars.M>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (50%, 30%)
+/ items = frontavatars.M
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item frontavatars.M>
+/1 = "bluemalefront-m.png"
+/2 = "greenmalefront-m.png"
+</item>
+
+<picture leftavatars.M>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (75%, 30%)
+/ items = leftavatars.M
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item leftavatars.M>
+/1 = "bluemaleleft-m.png"
+/2 = "greenmaleleft-m.png"
+</item>
+
+<picture rightavatars.M>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (25%, 30%)
+/ items = rightavatars.M
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item rightavatars.M>
+/1 = "bluemaleright-m.png"
+/2 = "greenmaleright-m.png"
+</item>
+
+<picture frontavatars.F>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (50%, 30%)
+/ items = frontavatars.F
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item frontavatars.F>
+/1 = "bluefemalefront-f.png"
+/2 = "greenfemalefront-f.png"
+</item>
+
+<picture leftavatars.F>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (75%, 30%)
+/ items = leftavatars.F
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item leftavatars.F>
+/1 = "bluefemaleleft-f.png"
+/2 = "greenfemaleleft-f.png"
+</item>
+
+<picture rightavatars.F>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (25%, 30%)
+/ items = rightavatars.F
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item rightavatars.F>
+/1 = "bluefemaleright-f.png"
+/2 = "greenfemaleright-f.png"
+</item>
+
+<text introductions>
+/ select = values.trialindex
+/ erase = true(255,255,255)
+/ position = (50%, 100%)
+/ valign = bottom
+/ items = introductions
+/ size = (100%,40%)
+</text>
+
+<item introductions>
+/1 = "Meet <%item.names.item(1)%>.  <%item.names.item(1)%>’s Recently, <%item.names.item(1)%> began work as an accountant at a local branch of a national banking firm. Following a recent domestic abuse charge, <%item.names.item(1)%> is newly single and currently lives alone in a two bedroom house. Despite having ample free time when he does not work, <%item.names.item(1)%> does not donate to or volunteer at local charities. <%item.names.item(1)%> spends most of his evenings at a local dive bar talking and enjoying drinks with friends and co-workers. <%item.names.item(1)%>’s friends would describe him as self-serving.  <%item.names.item(1)%> is represented by the color blue.~n~nPlease press space bar to continue."
+/2 = "Meet <%item.names.item(2)%>.  Recently, <%item.names.item(2)%> started a charity that provides counseling and support services to impoverished kids. <%item.names.item(2)%> is married and currently lives with his wife and children in a two-bedroom house. Despite his busy schedule, <%item.names.item(2)%> volunteers with his wife and kids at a local retirement home reading and playing games with the residents twice a week, as he believes it is important to give back to his community. <%item.names.item(2)%>'s friends would describe him as selfless.  <%item.names.item(2)%> is represented by the color green.~n~nPlease press space bar to continue."
+</item>
+
+<list introductions>
+/ items = (1,2)
+/ selectionmode = random
+/ selectionrate = trial
+</list>
+
+***************avatars and labels for learning and recall******************
+
+<picture LSavatar.M>
+/ select = random
+/ erase = true(255,255,255)
+/ position = (50%, 50%)
+/ items = LSavatar.M
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item LSavatar.M>
+/1 = "lflblue-m.png"
+/2 = "lfrblue-m.png"
+/3 = "rflblue-m.png"
+/4 = "rfrblue-m.png"
+/5 = "bluemaleleft-m.png"
+/6 = "bluemaleright-m.png"
+</item>
+
+<picture HSavatar.M>
+/ select = random
+/ erase = true(255,255,255)
+/ position = (50%, 50%)
+/ items = HSavatar.M
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item HSavatar.M>
+/1 = "lflgreen-m.png"
+/2 = "lfrgreen-m.png"
+/3 = "rflgreen-m.png"
+/4 = "rfrgreen-m.png"
+/5 = "greenmaleleft-m.png"
+/6 = "greenmaleright-m.png"
+</item>
+
+<picture LSavatar.F>
+/ select = random
+/ erase = true(255,255,255)
+/ position = (50%, 50%)
+/ items = LSavatar.F
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item LSavatar.F>
+/1 = "lflblue-f.png"
+/2 = "lfrblue-f.png"
+/3 = "rflblue-f.png"
+/4 = "rfrblue-f.png"
+/5 = "bluefemaleleft-f.png"
+/6 = "bluefemaleright-f.png"
+</item>
+
+<picture HSavatar.F>
+/ select = random
+/ erase = true(255,255,255)
+/ position = (50%, 50%)
+/ items = HSavatar.F
+/ size = (16.25%, 53.9%)
+</picture>
+
+<item HSavatar.F>
+/1 = "lflgreen-f.png"
+/2 = "lfrgreen-f.png"
+/3 = "rflgreen-f.png"
+/4 = "rfrgreen-f.png"
+/5 = "greenfemaleleft-f.png"
+/6 = "greenfemaleright-f.png"
+</item>
+
+<text LSlabel>
+/ erase = true(255,255,255)
+/ position = (50%, 100%)
+/ valign = bottom
+/ items = ("<%item.names.item(1)%>~n~n(Employment: Accountant)~n~nPlease press space bar to continue.")
+/ size = (75%,20%)
+</text>
+
+<text HSlabel>
+/ erase = true(255,255,255)
+/ position = (50%, 100%)
+/ valign = bottom
+/ items = ("<%item.names.item(2)%>~n~n(Employment: Charity Director)~n~nPlease press space bar to continue.")
+/ size = (75%,20%)
+</text>
+
+***************test questions******************
+
+<text LStestQ1>
+/ erase = true(255,255,255)
+/ position = (50%,10%)
+/ valign = top
+/ items = ("This person works as an accountant.  What is this person's name?")
+/ txcolor = (0,0,0)
+/ txbgcolor = (255,255,255)
+</text>
+
+<text HStestQ1>
+/ erase = true(255,255,255)
+/ position = (50%,10%)
+/ valign = top
+/ items = ("This person works as a charity director.  What is this person's name?")
+/ txcolor = (0,0,0)
+/ txbgcolor = (255,255,255)
+</text>
+
+<text testQ2>
+/ erase = true(255,255,255)
+/ position = (50%,90%)
+/ valign = bottom
+/ items = ("Press 1 for <%item.names.item(2)%>        Press 2 for <%item.names.item(1)%>")
+/ txcolor = (0,0,0)
+/ txbgcolor = (255,255,255)
+</text>
+
+<text fixation>
+/ items = ("+")
+/ position = (50%, 50%)
+/ txcolor = (0,0,0)
+/ txbgcolor = (255,255,255)
+/ fontstyle = ("Arial", 4%)
+</text>
+
+<text erasefix>
+/ items = ("+")
+/ position = (50%, 50%)
+/ txcolor = (255,255,255)
+/ txbgcolor = (255,255,255)
+/ fontstyle = ("Arial", 4%)
+</text>
+
+<text error>
+/ position = (50%, 10%)
+/ valign = top
+/ items = ("INCORRECT~n~nPlease give the correct response in order to proceed")
+/ txcolor = red
+/ txbgcolor = (255,255,255)
+/ size = (100%, 10%)
+</text>
+ 
+***************trial***************
+
+<trial LStest.M>  
+/ stimulustimes = [0=fixation; 250=erasefix,LSavatar.M,LStestQ1,testQ2]
+/ inputdevice = keyboard
+/ validresponse = ("1","2")
+/ correctresponse = ("2")
+/ errormessage = true(error,200)
+</trial>
+
+<trial HStest.M>  
+/ stimulustimes = [0=fixation; 250=erasefix,HSavatar.M,HStestQ1,testQ2]
+/ inputdevice = keyboard
+/ validresponse = ("1","2")
+/ correctresponse = ("1")
+/ errormessage = true(error,200)
+</trial>
+
+<trial LSlearning.M>
+/ stimulustimes = [0=fixation; 250=erasefix,LSavatar.M,LSlabel]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+/ errormessage = true(error,200)
+</trial>
+
+<trial HSlearning.M>
+/ stimulustimes = [0=fixation; 250=erasefix,HSavatar.M,HSlabel]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+/ errormessage = true(error,200)
+</trial>
+
+<trial introductions.M>
+/ ontrialbegin = [values.trialindex = list.introductions.nextindex]
+/ stimulustimes = [0=frontavatars.M,leftavatars.M,rightavatars.M,introductions]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+</trial>
+
+<trial LStest.F>  
+/ stimulustimes = [0=fixation; 250=erasefix,LSavatar.F,LStestQ1,testQ2]
+/ inputdevice = keyboard
+/ validresponse = ("1","2")
+/ correctresponse = ("2")
+/ errormessage = true(error,200)
+</trial>
+
+<trial HStest.F>  
+/ stimulustimes = [0=fixation; 250=erasefix,HSavatar.F,HStestQ1,testQ2]
+/ inputdevice = keyboard
+/ validresponse = ("1","2")
+/ correctresponse = ("1")
+/ errormessage = true(error,200)
+</trial>
+
+<trial LSlearning.F>
+/ stimulustimes = [0=fixation; 250=erasefix,LSavatar.F,LSlabel]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+/ errormessage = true(error,200)
+</trial>
+
+<trial HSlearning.F>
+/ stimulustimes = [0=fixation; 250=erasefix,HSavatar.F,HSlabel]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+/ errormessage = true(error,200)
+</trial>
+
+<trial introductions.F>
+/ ontrialbegin = [values.trialindex = list.introductions.nextindex]
+/ stimulustimes = [0=frontavatars.F,leftavatars.F,rightavatars.F,introductions]
+/ inputdevice = keyboard
+/ validresponse = (" ")
+/ correctresponse = (" ")
+</trial>
+
+***************block***************
+
+<block introductions1.M>
+/preinstructions = (instruction.M)
+/trials = [1-2=introductions.M]
+</block>
+
+<block introductions2.M>
+/trials = [1-12=noreplace(LSlearning.M,HSlearning.M)]
+</block>
+
+<block test.M>
+/preinstructions = (endLearn.M)
+/trials = [1-36=noreplace(LStest.M,HStest.M)]
+/postinstructions = (feedback_test.M)
+/responsemode = correct
+</block>
+
+<block relearn.M>
+/preinstructions = (pre_relearn)
+/trials = [1-2=introductions.M; 3-38=noreplace(LStest.M,HStest.M)]
+/branch = [if(block.relearn.M.errorcount == 0) noblock]
+/branch = [if(block.relearn.M.errorcount > 0) block.relearn.M]
+/postinstructions = (feedback_relearn.M)
+/responsemode = correct
+</block>
+
+<block introductions1.F>
+/trials = [1-2=introductions.F]
+</block>
+
+<block introductions2.F>
+/preinstructions = (instruction.F)
+/trials = [1-12=noreplace(LSlearning.F,HSlearning.F)]
+</block>
+
+<block test.F>
+/preinstructions = (endLearn.F)
+/trials = [1-36=noreplace(LStest.F,HStest.F)]
+/postinstructions = (feedback_test.F)
+/responsemode = correct
+</block>
+
+<block relearn.F>
+/preinstructions = (pre_relearn)
+/trials = [1-2=introductions.F; 3-38=noreplace(LStest.F,HStest.F)]
+/branch = [if(block.relearn.F.errorcount == 0) noblock]
+/branch = [if(block.relearn.F.errorcount > 0) block.relearn.F]
+/postinstructions = (feedback_relearn.F)
+/responsemode = correct
+</block>
+
+***************experiment (gender selection disabled)***************
+
+DO NOT change the expt names!  Inquisit appears to present expts in alphabetical order.
+
+expt GenderOpt>
+/ blocks = [1=genderopt]
+</expt>
+
+<expt Training.Order1M>
+/ onexptbegin = [setitem(item.names, "James", 1); setitem(item.names, "Eric", 2)]
+/ blocks = [1=introductions1.M; 2=introductions2.M; 3=test.M; 4=relearn.M]
+/ preinstructions = (welcome)
+/ postinstructions = (end)
+/ subjects = (1 of 2)
+/ skip = [dropdown.genderopt.response == "female"]
+</expt>
+
+expt Training.Order1F>
+/ onexptbegin = [setitem(item.names, "Jenny", 1); setitem(item.names, "Erica", 2)]
+/ blocks = [1=introductions1.F; 2=individuate; 3=introductions2.F; 4=test.F; 5=relearn.F]
+/ preinstructions = (welcome)
+/ postinstructions = (end)
+/ subjects = (1 of 2)
+/ skip = [dropdown.genderopt.response == "male"]
+</expt>
+
+<expt Training.Order2M>
+/ onexptbegin = [setitem(item.names, "Eric", 1); setitem(item.names, "James", 2)]
+/ blocks = [1=introductions1.M; 2=introductions2.M; 3=test.M; 4=relearn.M]
+/ preinstructions = (welcome)
+/ postinstructions = (end)
+/ subjects = (2 of 2)
+/ skip = [dropdown.genderopt.response == "female"]
+</expt>
+
+expt Training.Order2F>
+/ onexptbegin = [setitem(item.names, "Erica", 1); setitem(item.names, "Jenny", 2)]
+/ blocks = [1=introductions1.F; 2=individuate; 3=introductions2.F; 4=test.F; 5=relearn.F]
+/ preinstructions = (welcome)
+/ postinstructions = (end)
+/ subjects = (2 of 2)
+/ skip = [dropdown.genderopt.response == "male"]
+</expt>
+
+***************instructions***************
+<instruct> 
+/ nextkey = ("p")
+/ prevkey = ("q")
+/ nextlabel = "Press <p> to continue to the next page"
+/ prevlabel = "Press <q> to go back to the previous page"
+/ fontstyle = ("Arial", 3%)
+/ screencolor = (255,255,255)
+/ txcolor = (0,0,0)
+/ windowsize = (80%,80%)
+</instruct>
+
+<page welcome>
+Welcome to the Perspective-Taking Task
+^^We are interested in studying how people think of others based on what can be learned from short stories. 
+^^You will shortly read some stories about two individuals with different jobs, education levels, and living situations. 
+^^These individuals will be represented by virtual avatars.  You will later have the chance to take the visual perspectives of these avatars.
+^^These avatars will be dressed in different colors.
+^^We would now like you to get to know these avatars.
+</page>
+
+<page instruction.M>
+In the following screens, you will see each of the two avatars used in this study from a number of possible angles (e.g., viewed from the front, from the side, or from above).  Each avatar will appear along with a short story describing his background.
+^^One avatar represents James and another represents Eric. 
+^^PLEASE READ CAREFULLY!  We will be testing your memory for information about these individuals at multiple points in this study.  Incorrect answers to these memory tests may lead to rejection of a completed HIT.  The stories are short, so you will have no problem remembering everything if you take your time in reading them.
+</page>
+
+<page instruction.F>
+In the following screens, you will see each of the two avatars used in this study from a number of possible angles (e.g., viewed from the front, from the side, or from above).  Each avatar will appear along with a short story describing her background.
+^^One avatar represents Jenny and another represents Erica.  Both individuals live in the same city, known for its large shopping mall, Mall One.  Every year, Mall One attracts visitors from around the country.  Although Jenny and Erica grew up in the same city and work at the same shopping mall, they are not personally acquainted.
+^^PLEASE READ CAREFULLY!  We will be testing your memory for information about these individuals at multiple points in this study.  Incorrect answers to these memory tests may lead to rejection of a completed HIT.  The stories are short, so you will have no problem remembering everything if you take your time in reading them.
+</page>
+
+<page endLearn.M>
+Great work! We will test your memory for the association between identity and color shortly.
+^^You will be presented with avatars and their names, but this time without any further information. You will be asked to indicate the avatar's job by pressing 1 or 2.
+^^For example, you will see a question similar to the one below: 
+^^This person works as the charity director.  What is this person's name?
+^Press 1 for Eric          Press 2 for James
+^^If you make errors, you will have to press the correct key in order to advance.
+^^If you are ready, you may start now.
+</page>
+
+<page endLearn.F>
+Great work! We will test your memory for the association between identity and color shortly.
+^^You will be presented with avatars and their names, but this time without any further information. You will be asked to indicate the avatar's job by pressing 1 or 2.
+^^For example, you will see a question similar to the one below: 
+^^This person works as the mall director.  What is this person's name?
+^Press 1 for Erica          Press 2 for Jenny
+^^If you make errors, you will have to press the correct key in order to advance.
+^^If you are ready, you may start now.
+</page>
+
+<page end>
+Great work! Thank you for your participation.
+^^We will start the next part of the experiment shortly.
+</page>
+
+<page feedback_test.M>
+You have made <%block.test.M.errorcount%> errors.
+^^When you are ready, please proceed.
+</page>
+
+<page feedback_test.F>
+You have made <%block.test.F.errorcount%> errors.
+^^When you are ready, please proceed.
+</page>
+
+<page feedback_relearn.M>
+You have made <%block.relearn.M.errorcount%> errors.
+^^When you are ready, please proceed.
+</page>
+
+<page feedback_relearn.F>
+You have made <%block.relearn.F.errorcount%> errors.
+^^When you are ready, please proceed.
+</page>
+
+<page pre_relearn>
+Thank you again for your effort!
+^^We would like to test your memory one more time.
+^^Please note that you are allowed to have 0 missed attempts in the memory test this time. 
+^^If you do not achieve 100% accuracy, you will be asked to review the identity-and-color associations again.
+^^When you are ready, please proceed.
+</page>
