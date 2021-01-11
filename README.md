@@ -2,6 +2,8 @@
 
 In this repository, you will find the novel visual perspective-taking paradigms I programmed as part of my PhD and early postdoctoral work. The original paradigm was programmed in E-Prime, but I have also created a version of the 3PP-3PP task in Inquisit.
 
+If you identify any errors as you work with these scripts, please let me know by submitting an issue in the Issues tab. Thank you.
+
 For more information on the visual perspective-taking paradigms, please see
 
 Mattan, B. D., Quinn, K. A., Acaster, S. L., Jennings, R. M., & Rotshtein, P. (2017). Prioritisation of self–relevant perspectives in ageing.  *Quarterly Journal of Experimental Psychology, 70*, 1033–1052.  doi:10.1080/17470218.2015.1127399
