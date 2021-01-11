@@ -1,5 +1,4 @@
 # Paradigms
- Paradigms I've used in my research.
 
 In this repository, you will find the novel visual perspective-taking paradigms I programmed as part of my PhD and early postdoctoral work. The original paradigm was programmed in E-Prime, but I have also created a version of the 3PP-3PP task in Inquisit.
 
